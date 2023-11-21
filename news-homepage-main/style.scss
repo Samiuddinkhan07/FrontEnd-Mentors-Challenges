@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$soft-orange-p: hsl(35, 77%, 62%);
+$soft-red-p: hsl(5, 85%, 63%);
+$Off-white: hsl(36, 100%, 99%);
+$Grayish-blue: hsl(233, 8%, 79%);
+$Dark-grayish-blue: hsl(236, 13%, 42%);
+$Very-dark-blue: hsl(240, 100%, 5%);
+$font-size-p: 15px;
+$font-family: 'Inter', sans-serif;
+
+:root {
+  --soft-orange-p: #{$soft-orange-p};
+  --soft-red-p: #{$soft-red-p};
+  --Off-white: #{$Off-white};
+  --Grayish-blue: #{$Grayish-blue};
+  --Dark-grayish-blue: #{$Dark-grayish-blue};
+  --Very-dark-blue: #{$Very-dark-blue};
+  --font-size-p: #{$font-size-p};
+  --font-family: #{$font-family};
+}
+
+/*Default css*/
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+p{
+    font-size: var(--font-size-p);
+    color:var(--Grayish-blue)
+}
+.container{
+    width: 80%;
+    margin:0 auto;
+    .container-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .navigation-bar{
+        display: flex;
+        .logo-container{
+            flex:1;
+        }
+        .navigation-links{
+            flex:.11111%;
+            ul{
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                
+            }
+        }
+    }
+    .page-content{
+        display: grid;
+        grid-template-areas: "content article";
+        grid-template-columns: 74% 1fr;
+        border: 2px solid;
+        margin: 10px 0;
+        gap: 55px;
+        .content1{
+            grid-area: content;
+            border-right: 2px solid;
+            .content-details{
+                display: flex;
+                flex-direction: column;
+                margin: 15px 0px;
+                @media screen and (min-width:1100px){
+                    flex-direction: row;
+                }
+                h1{
+                    @media screen and (min-width:768px){
+                        font-size:3rem;
+                        line-height: 0.94;
+                    }
+                    @media screen and (min-width:1100px) {
+                        font-size:6rem;
+                        line-height: 0.94;
+                    }
+                    
+                }
+                .content-details-text{
+                    align-self: start;
+                }
+                p{
+                    word-spacing: 5px;
+                    margin:20px 0px 60px
+                }
+            }
+        }
+        .content2{
+            grid-area:article;
+        }
+    }
+
+    .page-articles{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+a{
+    text-decoration: none;
+    color:var(--Grayish-blue);
+    font-weight: 500;
+}
+
