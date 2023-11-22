@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+@font-face {
+    font-family: "Inter";
+    src: url(/assets/fonts/static/Inter-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "Inter-regular";
+    src: url(/assets/fonts/static/Inter-Regular.ttf);
+}
+@font-face {
+    font-family: "Inter-bold";
+    src: url(/assets/fonts/static/Inter-Bold.ttf);
+}
+
+
 
 $soft-orange-p: hsl(35, 77%, 62%);
 $soft-red-p: hsl(5, 85%, 63%);
@@ -7,7 +22,10 @@ $Grayish-blue: hsl(233, 8%, 79%);
 $Dark-grayish-blue: hsl(236, 13%, 42%);
 $Very-dark-blue: hsl(240, 100%, 5%);
 $font-size-p: 15px;
-$font-family: 'Inter', sans-serif;
+$font-family-bolder: 'Inter', sans-serif;
+$font-family-bold:'Inter',sans-serif;
+$font-family-regular:'Inter-regular',sans-serif;
+$font-family-bold:'Inter-bold',sans-serif;
 
 :root {
   --soft-orange-p: #{$soft-orange-p};
@@ -17,7 +35,9 @@ $font-family: 'Inter', sans-serif;
   --Dark-grayish-blue: #{$Dark-grayish-blue};
   --Very-dark-blue: #{$Very-dark-blue};
   --font-size-p: #{$font-size-p};
-  --font-family: #{$font-family};
+  --font-family-bolder: #{$font-family-bolder};
+  --font-family-bold: #{$font-family-bold};
+  --font-family-regular:#{$font-family-regular};
 }
 
 /*Default css*/
@@ -26,12 +46,16 @@ $font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-family);
+    
 }
 
 p{
     font-size: var(--font-size-p);
-    color:var(--Grayish-blue)
+    color:var(--Grayish-blue);
+    font-family: var(--font-family-bold);
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-family-bolder);
 }
 .container{
     width: 80%;
@@ -42,6 +66,7 @@ p{
     }
     .navigation-bar{
         display: flex;
+        margin: 35px 0px;
         .logo-container{
             flex:1;
         }
@@ -51,20 +76,27 @@ p{
                 list-style-type: none;
                 display: flex;
                 justify-content: space-between;
+                font-family: var(--font-family-regular);
+                font-weight: 600;
                 
             }
         }
     }
+    .page-container{
+        margin:0px 0px 10px;
+    }
     .page-content{
         display: grid;
         grid-template-areas: "content article";
-        grid-template-columns: 74% 1fr;
-        border: 2px solid;
-        margin: 10px 0;
-        gap: 55px;
+        grid-template-columns: 69% 1fr;
+        margin: 50px 0;
+        gap: 28px;
+        @media screen and (max-width:800px){
+            grid-template-areas: "content" "article";
+            grid-template-columns: 1fr;
+        }
         .content1{
             grid-area: content;
-            border-right: 2px solid;
             .content-details{
                 display: flex;
                 flex-direction: column;
@@ -85,15 +117,68 @@ p{
                 }
                 .content-details-text{
                     align-self: start;
+                    display: flex;
+                    flex-direction: column;
+                    height: 268px;
+                    align-items: flex-start;
                 }
                 p{
                     word-spacing: 5px;
-                    margin:20px 0px 60px
+                    line-height: 1.2;
+                    padding: 20px 20px;
+                    font-family: var(--font-family-regular);
+                    font-weight: 500;
+                    font-size: 18px;
+                    @media screen and (min-width:768px){
+                        flex:1;
+                    }
+                    @media screen and (max-width:768px){
+                        
+                        margin-bottom: 15px;
+                    }
+                }
+                button{
+                    padding: 15px 20px;
+                    font-size: 20px;
+                    letter-spacing: 5px;
+                    border:none;
+                    background-color: var(--soft-red-p);
+                    color:#fff;
                 }
             }
         }
         .content2{
             grid-area:article;
+            background-color: var(--Very-dark-blue);
+            padding: 33px;
+            .content-inner{
+                
+                h1{
+                    color: var(--soft-orange-p);
+                    padding:0px 0px 25px 0px;
+                    font-size: 40px;
+                }
+                ul{
+                    list-style-type: none;
+                    li{
+                        h4{
+                            color: white;
+                            padding: 0px 0px 50px 0px;
+                            font-size:24px;
+                        }
+                        border-bottom: 2px solid grey;
+                        margin-bottom: 50px;
+                        padding: 20px 0px;
+                        &:last-child{
+                            border: none;
+                        }
+                        p{
+                            font-size: 14px;
+                            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -101,6 +186,30 @@ p{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @media screen and (max-width:767px){
+            flex-direction: column;
+        }
+        .artilce-cards{
+            display: flex;
+            
+            .article-content{
+                margin:0px 20px;
+            }
+            img{
+                height: 150px;
+            }
+            h1{
+                margin-bottom:15px;
+                color:var(--Grayish-blue)
+            }
+            h3{
+                margin-bottom:20px;
+            }
+            p{
+                font-family: var(--font-family-regular);
+                font-weight: 600;
+            }
+        }
     }
 }
 
@@ -110,3 +219,12 @@ a{
     font-weight: 500;
 }
 
+.attribution 
+{ 
+    font-size: 20px; 
+    text-align: center; 
+    margin-top:80px;
+    border-top:1px solid var(--Dark-grayish-blue);
+    padding: 15px 0px;
+}
+    .attribution a { color: hsl(228, 45%, 44%); }
