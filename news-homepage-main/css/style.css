@@ -79,6 +79,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-regular);
   font-weight: 600;
 }
+.container .navigation-bar .navigation-links ul li a:hover {
+  color: var(--soft-red-p);
+}
 .container .navigation-bar .navigation-links-mobile {
   background-color: #fff;
   position: fixed;
@@ -115,6 +118,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .container .navigation-bar .navigation-links-mobile ul li a {
   color: #000;
+}
+.container .navigation-bar .navigation-links-mobile ul li a:hover {
+  color: var(--soft-red-p);
 }
 @media screen and (min-width: 800px) {
   .container .navigation-bar .menu-toggle-icon {
@@ -202,6 +208,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--soft-red-p);
   color: #fff;
 }
+.container .page-content .content1 .content-details button:hover {
+  background-color: var(--Dark-grayish-blue);
+}
 .container .page-content .content2 {
   grid-area: article;
   background-color: var(--Very-dark-blue);
@@ -224,6 +233,9 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   padding: 0px 0px 50px 0px;
   font-size: 24px;
+}
+.container .page-content .content2 .content-inner ul li h4:hover {
+  color: var(--soft-orange-p);
 }
 .container .page-content .content2 .content-inner ul li:last-child {
   border: none;
@@ -255,6 +267,9 @@ h1, h2, h3, h4, h5, h6 {
 .container .page-articles .artilce-cards h1 {
   margin-bottom: 15px;
   color: var(--Grayish-blue);
+}
+.container .page-articles .artilce-cards h1:hover {
+  color: var(--soft-red-p);
 }
 .container .page-articles .artilce-cards h3 {
   margin-bottom: 20px;
